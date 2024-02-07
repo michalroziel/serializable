@@ -11,11 +11,19 @@ public class MainClass {
         myEmp.empId = 101;
         myEmp.name = "Michal";
 
-        File myFile = (src/main/java/testFile.txt);
+
+        File myFile = new File("/Users/michalroziel/Documents/htwprog/serializable/SeriaziabilityTestProject/src/main/java/testFile.txt");
 
         FileOutputStream fos = new FileOutputStream(myFile);
 
-        ObjectOutput ois = new ObjectInputStream(fos);
+        ObjectOutput ois = new ObjectOutputStream(fos);
+
+        
+        ois.writeObject(myEmp);
+
+
+        ois.close();
+        fos.close();
 
             // plan is to write an employee object into txt file then read it !
 
